@@ -41,46 +41,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr *ngFor = 'let p of danhsach'>
                             <th scope="row"><img src="assets/cai-choi.gif" alt="" width="40px" height="35px"></th>
-                            <td>Leaf Rake</td>
-                            <td>gdn-0011</td>
-                            <td>March 19,2016</td>
-                            <td>$19.95</td>
+                            <td>{{p.productName}}</td>
+                            <td>{{p.productCode}}</td>
+                            <td>{{p.releaseDate}}</td>
+                            <td>{{p.price}}</td>
                             <td><img src="assets/5_star-512.png" alt="" width="100px" height="55px"></td>
                         </tr>
-                        <tr>
-                            <th scope="row"><img src="assets/cai-choi.gif" alt="" width="40px" height="35px"></th>
-                            <td>Garden Cart</td>
-                            <td>gdn-0023</td>
-                            <td>March 18,2016</td>
-                            <td>$32.99</td>
-                            <td><img src="assets/5_star-512.png" alt="" width="100px" height="55px"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><img src="assets/cai-choi.gif" alt="" width="40px" height="35px"></th>
-                            <td>Hammer</td>
-                            <td>tbx-0048</td>
-                            <td>May 15,2016</td>
-                            <td>$8.90</td>
-                            <td><img src="assets/5_star-512.png" alt="" width="100px" height="55px"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><img src="assets/cai-choi.gif" alt="" width="40px" height="35px"></th>
-                            <td>Saw</td>
-                            <td>tbx-0022</td>
-                            <td>May 15,2016</td>
-                            <td>$11.55</td>
-                            <td><img src="assets/5_star-512.png" alt="" width="100px" height="55px"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><img src="assets/cai-choi.gif" alt="" width="40px" height="35px"></th>
-                            <td>Video Game Controller</td>
-                            <td>gmg-0042</td>
-                            <td>October 15,2016</td>
-                            <td>$39.95</td>
-                            <td><img src="assets/5_star-512.png" alt="" width="100px" height="55px"></td>
-                        </tr>
+                      
                     </tbody>
                 </table>
             </div>
