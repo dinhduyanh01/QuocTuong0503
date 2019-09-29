@@ -11,7 +11,9 @@ import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { DangkiComponent } from './dangki/dangki.component';
 import { DoimatkhauComponent } from './doimatkhau/doimatkhau.component';
 import { DanhmucmonhocComponent } from './danhmucmonhoc/danhmucmonhoc.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
+import { ThiComponent } from './thi/thi.component';
+import { SuadoitaikhoanComponent } from './suadoitaikhoan/suadoitaikhoan.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +26,17 @@ import { DanhmucmonhocComponent } from './danhmucmonhoc/danhmucmonhoc.component'
     DangnhapComponent,
     DangkiComponent,
     DoimatkhauComponent,
-    DanhmucmonhocComponent
+    DanhmucmonhocComponent,
+    ThiComponent,
+    SuadoitaikhoanComponent
   ],
   imports: [
-
+    NgxPaginationModule,
     BrowserModule,
     RouterModule.forRoot([
       { path: "", component: TrangchuComponent },
       { path: 'lienhe', component: LienheComponent },
+      { path: 'suadoi', component: SuadoitaikhoanComponent },
       { path: 'gioithieu', component: GioithieuComponent },
       { path: 'gopy', component: GopyComponent },
       { path: 'hoidap', component: HoidapComponent },
@@ -39,6 +44,7 @@ import { DanhmucmonhocComponent } from './danhmucmonhoc/danhmucmonhoc.component'
       { path: 'dangki', component: DangkiComponent },
       { path: 'doimatkhau', component: DoimatkhauComponent },
       { path: 'DMMH', component: DanhmucmonhocComponent },
+      { path: 'DMMH/:ID', component: ThiComponent },
 
     ])
   ],
