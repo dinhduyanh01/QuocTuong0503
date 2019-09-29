@@ -1,0 +1,42 @@
+.chu{
+    text-align: center;
+    float: right;   
+
+}
+.chu h1{
+    margin: auto;
+
+}
+.arlert{
+    text-align: center;
+}
+.trai img{
+    height: 300px;
+    width: 100%;
+}
+.trai{
+    border-right-style: ridge;
+}
+.phai img{
+    height: 300px;
+    width: 100%;
+}
+.phaiduoi{
+    text-align: center;
+    margin: auto;
+    padding-top: 200px;
+}
+.phaiduoi h1{
+    color: red; 
+}
+.header{
+    background-color: #555555;
+    width: 100%;
+    height: 100px;
+}
+.header a{
+    padding-top: 30px;
+}
+.mid {
+    padding:100px;
+}

@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+</body>
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">nhập chiều dài</label>
+            <input type="number" class="form-control" placeholder="nhapchieudai" [(ngModel)]="hcn.chieudai"
+                [ngModelOptions]="{standalone: true}">
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">nhập chiều dài</label>
+            <input type="number" class="form-control" placeholder="nhập chiều rộng" [(ngModel)]="hcn.chieurong"
+                [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group form-check">
+            <div class="form-group">
+                <input type="number" class="form-control" [(ngModel)]="hcn.chuvi" [ngModelOptions]="{standalone: true}">
+            </div>
+
+        </div>
+        <div class="form-group form-check">
+            <div class="form-group">
+                <input type="number" class="form-control" [(ngModel)]="hcn.dientich"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="tinh()">Submit</button>
+    </form>
+    <br>
+    <div class="card text-center">
+        <div class="card-header">
+            Tính thưởng tết nguyên đán
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">nhập tên</label>
+                <input type="text" class="form-control"  [(ngModel)]="hcn.chieudai"
+                    [ngModelOptions]="{standalone: true}">
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">lương VND</label>
+                <input type="number" class="form-control"  [(ngModel)]="thuong.luong"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"  value="Nam"  [(ngModel)]="thuong.gioitinh"
+                checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Nam
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Nu" [(ngModel)]="thuong.gioitinh">
+                <label class="form-check-label" for="exampleRadios2" >
+                    Nữ
+                </label>
+            </div>
+            <select name="" id=""  [(ngModel)]="thuong.rate" >
+                <option *ngFor="let item of tuoithuong" value="{{item.giatri}}" >{{item.age}}</option>
+            </select>
+        </div>
+        <div class="card-footer text-muted">
+            <p >Tiền thưởng :  ${{tinhthuong()}}</p>
+        </div>
+    </div>
+</div>
+
+</html>

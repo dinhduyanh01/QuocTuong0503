@@ -1,0 +1,37 @@
+.chu{
+    text-align: center;
+    float: right;   
+
+}
+.chu h1{
+    margin: auto;
+
+}
+.arlert{
+    text-align: center;
+}
+.trai img{
+    height: 300px;
+    width: 100%;
+}
+.trai{
+    border-right-style: ridge;
+}
+.phai img{
+    height: 300px;
+    width: 100%;
+}
+.phaiduoi{
+    text-align: center;
+    margin: auto;
+    padding-top: 200px;
+}
+.phaiduoi h1{
+    color: red; 
+}
+.duoi h1{
+    color: red;
+}
+.duoi {
+    text-align: center;
+}

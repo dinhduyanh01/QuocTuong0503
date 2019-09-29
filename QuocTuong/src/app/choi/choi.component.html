@@ -24,18 +24,17 @@
     <div class="container">
         <div class="card text-center">
             <div class="card-header">
-                leaf Rake
+                {{pagetitle}}
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-4 col-md-4 col-lg-4">
-                        <div class="traigiua">
-                            <p>Name:            Leaf Rake</p>
-                            <p>Code:            GDN-0011</p>
-                            <p>Description:     Leaf rake with 48-inch wooden</p>
-                            <p>Availability:    March 19,2016</p>
-                            <p>Price:           $19.95</p>
-                            <p>5 Star Rating:   3.2</p>
+                        <div class="traigiua" >
+                            <p>Name:            {{product.productName}}</p>
+                            <p>Description:     {{product.description}}</p>
+                            <p>Availability:    {{product.releaseDate}}</p>
+                            <p>Price:           {{product.price}}</p>
+                            <p>5 Star Rating:   {{product.starRating}}</p>
                         </div>
                     </div>
                     <div class="col-8 col-md-8 col-lg-8">

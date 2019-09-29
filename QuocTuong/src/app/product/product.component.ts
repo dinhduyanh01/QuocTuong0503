@@ -58,6 +58,7 @@ export class ProductComponent implements OnInit {
         "imageUrl": "gamecontroller.jpg"
     }
 ]
+    a= false
   animg(){
     
   }
@@ -65,5 +66,9 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  hienhinh() {
+  
+    this.a =!this.a
+    return this.a;
+    }
 }

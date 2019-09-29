@@ -22,6 +22,7 @@
 
 <body>
     <br>
+    
     <div class="container">
         <div class="card">
             <h5 class="card-header">List Product</h5>
@@ -32,7 +33,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col"><button type="button" class="btn btn-primary">Hien Image</button></th>
+                            <th scope="col"><button type="button" class="btn btn-primary" (click) = "hienhinh()" >Hien Image</button></th>
                             <th scope="col"><b>Product</b></th>
                             <th scope="col"><b>Code</b></th>
                             <th scope="col"><b>Available</b></th>
@@ -42,12 +43,12 @@
                     </thead>
                     <tbody>
                         <tr *ngFor = 'let p of danhsach'>
-                            <th scope="row"><img src="assets/cai-choi.gif" alt="" width="40px" height="35px"></th>
-                            <td>{{p.productName}}</td>
+                            <th scope="row"><img src="assets/cai-choi.gif" alt="" width="40px" height="35px" *ngIf="a" ></th>
+                            <td><a [routerLink]="[ '/product',p.productId]">{{p.productName}}</a></td>
                             <td>{{p.productCode}}</td>
                             <td>{{p.releaseDate}}</td>
                             <td>{{p.price}}</td>
-                            <td><img src="assets/5_star-512.png" alt="" width="100px" height="55px"></td>
+                            <td><img src="assets/5_star-512.png" alt="" width="100px" height="55px" ></td>
                         </tr>
                       
                     </tbody>
