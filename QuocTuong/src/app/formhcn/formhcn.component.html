@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,36 +59,106 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="exampleInputEmail1">nhập tên</label>
-                <input type="text" class="form-control"  [(ngModel)]="hcn.chieudai"
+                <input type="text" class="form-control" [(ngModel)]="hcn.chieudai"
                     [ngModelOptions]="{standalone: true}">
 
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">lương VND</label>
-                <input type="number" class="form-control"  [(ngModel)]="thuong.luong"
+                <input type="number" class="form-control" [(ngModel)]="thuong.luong"
                     [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"  value="Nam"  [(ngModel)]="thuong.gioitinh"
-                checked>
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Nam"
+                    [(ngModel)]="thuong.gioitinh" checked>
                 <label class="form-check-label" for="exampleRadios1">
                     Nam
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Nu" [(ngModel)]="thuong.gioitinh">
-                <label class="form-check-label" for="exampleRadios2" >
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Nu"
+                    [(ngModel)]="thuong.gioitinh">
+                <label class="form-check-label" for="exampleRadios2">
                     Nữ
                 </label>
             </div>
-            <select name="" id=""  [(ngModel)]="thuong.rate" >
-                <option *ngFor="let item of tuoithuong" value="{{item.giatri}}" >{{item.age}}</option>
+            <select name="" id="" [(ngModel)]="thuong.rate">
+                <option *ngFor="let item of tuoithuong" value="{{item.giatri}}">{{item.age}}</option>
             </select>
         </div>
         <div class="card-footer text-muted">
-            <p >Tiền thưởng :  ${{tinhthuong()}}</p>
+            <p>Tiền thưởng : ${{tinhthuong()}}</p>
         </div>
     </div>
+    <br>
+    <div class="duoi">
+        <div class="card text-center">
+            <div class="card-header">
+
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"><b>TÊN HÀNG</b></th>
+                            <th scope="col"><b>SỐ LƯỢNG</b></th>
+                            <th scope="col"><b>ĐƠN GIÁ</b></th>
+                            <th scope="col"><b>THÀNH TIỀN</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of dulieu">
+                            <th scope="row">
+                               <p><input type="checkbox" value="true">{{p.name}}</p>
+                            </th>
+                            <td><input type="number"  [(ngModel)]="p.soluong" ></td>
+                            <td>{{p.price}}</td>
+                            <td>{{p.soluong * p.price}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer text-muted">
+
+            </div>
+        </div>
+    </div>
+    <div class="card" style="width: 70rem;">
+        <div class="card-header">
+          Tính thưởng tết nguyên đán
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="form-group">
+                <label for="exampleInputEmail1">nhập tên</label>
+                <input type="text" class="form-control" >
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">lương VND</label>
+                <input type="number" class="form-control" [(ngModel)]="luong.giatri" >
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Nam"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Nam
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Nu"
+                   >
+                <label class="form-check-label" for="exampleRadios2">
+                    Nữ
+                </label>
+            </div>
+            <select name="" id="" [(ngModel)]="thuong.rate">
+                <option *ngFor="let item of tuoithuong" value="{{item.giatri}}">{{item.age}}</option>
+            </select>
+          </li>
+          <li class="list-group-item">Tiền thưởng : VND {{thongbao()}}</li>
+        </ul>
+      </div>
 </div>
 
 </html>
