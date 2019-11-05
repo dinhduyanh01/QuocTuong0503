@@ -27,21 +27,25 @@
                             <form>
 
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Tên Mới">
+                                    <input type="text" class="form-control" placeholder="Tên cũ" [(ngModel)]="Suadoi.tencu "  [ngModelOptions]="{standalone: true}">
                                 </div>
                                 <br>
                                 <div class="col">
-                                        <input type="text" class="form-control" placeholder="SĐT Mới">
+                                        <input type="text" class="form-control" placeholder="Tên Mới"[(ngModel)]="Suadoi.tenmoi "  [ngModelOptions]="{standalone: true}">
                                     </div>
                                 <br>
                                 <div class="col">
-                                        <input type="text" class="form-control" placeholder="Email Mới">
+                                        <input type="text" class="form-control" placeholder="Email cũ"[(ngModel)]="Suadoi.emailcu "  [ngModelOptions]="{standalone: true}">
                                     </div>
                                 <br>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Email Mới"[(ngModel)]="Suadoi.emailmoi "  [ngModelOptions]="{standalone: true}">
+                                </div>
+                            <br>
                               
                             </form>
                             <br>
-                            <a href="#" class="btn btn-primary">Enter</a>
+                            <a (click)="suadoi()" class="btn btn-primary">Enter</a>
                         </div>
                     </div>
                 </div>

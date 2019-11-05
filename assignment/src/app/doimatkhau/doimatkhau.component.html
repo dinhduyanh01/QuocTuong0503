@@ -25,21 +25,23 @@
                             <h5 class="card-title">Đổi mật khẩu</h5>
                             <form>
                                 <div class="form-group">
+                                    <input type="text" class="form-control" id="exampleInputPassword1"
+                                        placeholder="tài khoản" [(ngModel)]="matkhau.taikhoan"
+                                        [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <div class="form-group">
                                     <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Mật khẩu mới">
+                                        placeholder="Mật khẩu cũ" [(ngModel)]="matkhau.matkhaucu"
+                                        [ngModelOptions]="{standalone: true}">
                                 </div>
                                 <div class="form-group">
 
                                     <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder=" Mật khẩu mới">
+                                        placeholder=" Mật khẩu mới" [(ngModel)]="matkhau.matkhaumoi"
+                                        [ngModelOptions]="{standalone: true}">
                                 </div>
-                                <div class="form-group">
-
-                                        <input type="password" class="form-control" id="exampleInputPassword1"
-                                            placeholder="Nhập lại mật khẩu mới">
-                                    </div>
                             </form>
-                            <a href="#" class="btn btn-primary">Submit</a>
+                            <a (click)="doimatkhau()" class="btn btn-primary">Submit</a>
                         </div>
                     </div>
                 </div>

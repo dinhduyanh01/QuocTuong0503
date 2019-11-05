@@ -8,6 +8,8 @@ import { Pro3Component } from './pro3/pro3.component';
 import { Bai3Component } from './bai3/bai3.component';
 import { RouterModule } from '@angular/router';
 import { FormhcnComponent } from './formhcn/formhcn.component';
+import { StudentComponent } from './student/student.component';
+
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { FormhcnComponent } from './formhcn/formhcn.component';
     ProductComponent,
     Pro3Component,
     Bai3Component,
-    FormhcnComponent
+    FormhcnComponent,
+    StudentComponent
   ],
   imports: [ 
     FormsModule,

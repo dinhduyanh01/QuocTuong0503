@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<header>
+    <div class="container">
+        <h1>My Guitar Shop</h1>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <div class=row>
+            <div class="col-12 col-md-4 col-lg-4">
+                <div class="trai">
+                    <h5>Links</h5>
+                    <a href="#">View Cart</a>
+                    <br>
+                    <a href="#">Login/Resigter</a>
+                    <br>
+                    <a href="#">Home</a>
+                    <br>
+
+                    <ul>Categories
+                        <li *ngFor="let b of cato">
+                            <a href=""> {{b.catename}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-lg-8">
+                <div class="row">
+                    <div class="col-12 col-lg-12 col-md-12">
+                        <h1>{{product.productname}}</h1>
+                        <div class="row">
+                            <div class="col-4 col-md-4 col-lg-4">
+                                <img src="assets/guitar.jpg" alt="" width="100%">
+                            </div>
+                            <div class="col-8 col-md-8 col-lg-8">
+                                <h6>List price :$ {{product.price}}</h6>
+                                <h6>Description {{product.description}}</h6>
+                                <h6>New Features</h6>
+                             <li *ngFor="let p of product.newfeature">
+                                 {{p.text}}
+                             </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

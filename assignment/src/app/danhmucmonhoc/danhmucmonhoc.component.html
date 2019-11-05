@@ -94,7 +94,7 @@
 
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6"
-                *ngFor="let p of danhsach | paginate: { itemsPerPage: 4, currentPage: p }" [routerLink]="[ '/DMMH',p.Id]">
+                *ngFor="let p of product | paginate: { itemsPerPage: 4, currentPage: p }" [routerLink]="[ '/DMMH',p.Id]">
                 <div class="abc">
                     <div class="alert alert-primary" role="alert">
                         <h6> {{p.Name}}</h6>

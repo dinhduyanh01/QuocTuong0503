@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import{NgxPaginationModule} from 'ngx-pagination'
+import{NgxPaginationModule} from 'ngx-pagination';
+import{DataService} from '../DAL/data.service';
 @Component({
   selector: 'app-danhmucmonhoc',
   templateUrl: './danhmucmonhoc.component.html',
@@ -7,6 +8,7 @@ import{NgxPaginationModule} from 'ngx-pagination'
 })
 export class DanhmucmonhocComponent implements OnInit {
  p=1;
+ product
   danhsach =[
     {
         "Id": "ADAV",
@@ -109,9 +111,12 @@ export class DanhmucmonhocComponent implements OnInit {
         "Logo": "WEBU.jpg"
     }
 ]
-  constructor() { }
+  constructor(private dataa : DataService) { }
 
   ngOnInit() {
+      this.dataa.getsubject().subscribe(data =>{
+        this.product = data
+      })
   }
   nextpage(){
       if(this.danhsach.length/ 4 > this.p )

@@ -109,9 +109,9 @@
                     <tbody>
                         <tr *ngFor="let p of dulieu">
                             <th scope="row">
-                               <p><input type="checkbox" value="true">{{p.name}}</p>
+                                <p><input type="checkbox" value="true">{{p.name}}</p>
                             </th>
-                            <td><input type="number"  [(ngModel)]="p.soluong" ></td>
+                            <td><input type="number" [(ngModel)]="p.soluong"></td>
                             <td>{{p.price}}</td>
                             <td>{{p.soluong * p.price}}</td>
                         </tr>
@@ -125,40 +125,95 @@
     </div>
     <div class="card" style="width: 70rem;">
         <div class="card-header">
-          Tính thưởng tết nguyên đán
+            Tính thưởng tết nguyên đán
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <div class="form-group">
-                <label for="exampleInputEmail1">nhập tên</label>
-                <input type="text" class="form-control" >
+            <li class="list-group-item">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">nhập tên</label>
+                    <input type="text" class="form-control">
 
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">lương VND</label>
-                <input type="number" class="form-control" [(ngModel)]="luong.giatri" >
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Nam"
-                    checked>
-                <label class="form-check-label" for="exampleRadios1">
-                    Nam
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Nu"
-                   >
-                <label class="form-check-label" for="exampleRadios2">
-                    Nữ
-                </label>
-            </div>
-            <select name="" id="" [(ngModel)]="thuong.rate">
-                <option *ngFor="let item of tuoithuong" value="{{item.giatri}}">{{item.age}}</option>
-            </select>
-          </li>
-          <li class="list-group-item">Tiền thưởng : VND {{thongbao()}}</li>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">lương VND</label>
+                    <input type="number" class="form-control" [(ngModel)]="luong.giatri">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Nam"
+                        checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Nam
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Nu">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Nữ
+                    </label>
+                </div>
+                <select name="" id="" [(ngModel)]="thuong.rate">
+                    <option *ngFor="let item of tuoithuong" value="{{item.giatri}}">{{item.age}}</option>
+                </select>
+            </li>
+            <li class="list-group-item">Tiền thưởng : VND {{thongbao()}}</li>
         </ul>
-      </div>
+    </div>
+    <div class="card" style="width: 48rem;">
+        <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Họ và Tên</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="Họ và Tên" [(ngModel)]="formstudent.Fullname"  [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Ngày sinh</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="inputPassword3" placeholder="Ngày Sinh" [(ngModel)]="formstudent.Birthday"  [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">điểm</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputPassword3" placeholder="Điểm" [(ngModel)]="formstudent.Mark"  [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </form>
+            <div *ngIf = "show">
+                <button type="button" class="btn btn-primary btn-lg btn-block" (click) = "add()">Thêm</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" >Hủy</button>
+            </div>
+            <div *ngIf = "!show">
+                <button type="button" class="btn btn-primary btn-lg btn-block" (click)="luu(selectedId)">Luu</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block">Hủy</button>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Họ và Tên</th>
+                        <th scope="col">Điểm</th>
+                        <th scope="col">Ngày sinh</th>
+                        <th scope="col">Xếp loại</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of student">
+                        <th scope="row">{{p.Id}}</th>
+                        <td>{{p.Fullname}}</td>
+                        <td>{{p.Mark}}</td>
+                        <td>{{p.Birthday}}</td>
+                        <td>{{xeploai(p)}}</td>
+                        <td *ngIf = "show"><button type="button" class="btn btn-primary" (click) = "anhien(p)" >sửa </button>
+                            <button type="button" class="btn btn-secondary" (click) = "confirm(p.Id)">xóa</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 </html>

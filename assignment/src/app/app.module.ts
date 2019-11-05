@@ -14,10 +14,15 @@ import { DanhmucmonhocComponent } from './danhmucmonhoc/danhmucmonhoc.component'
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ThiComponent } from './thi/thi.component';
 import { SuadoitaikhoanComponent } from './suadoitaikhoan/suadoitaikhoan.component';
+import { StudentComponent } from './student/student.component';
+import{HttpClientModule}from '@angular/common/http'
+import { from } from 'rxjs';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
+
     TrangchuComponent,
     LienheComponent,
     GioithieuComponent,
@@ -28,10 +33,15 @@ import { SuadoitaikhoanComponent } from './suadoitaikhoan/suadoitaikhoan.compone
     DoimatkhauComponent,
     DanhmucmonhocComponent,
     ThiComponent,
-    SuadoitaikhoanComponent
+    SuadoitaikhoanComponent,
+    StudentComponent,
+   
+
   ],
   imports: [
+    FormsModule,
     NgxPaginationModule,
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot([
       { path: "", component: TrangchuComponent },
@@ -51,4 +61,5 @@ import { SuadoitaikhoanComponent } from './suadoitaikhoan/suadoitaikhoan.compone
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

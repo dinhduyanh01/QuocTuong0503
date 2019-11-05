@@ -26,28 +26,31 @@
                             <form>
 
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Tên truy cập">
+                                    <input type="text" class="form-control" placeholder="Tên truy cập" [(ngModel)]="dulieu.username"  [ngModelOptions]="{standalone: true}">
                                 </div>
                                 <br>
                                 <div class="col">
-                                        <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Mật khẩu">
+                                    <input type="text" class="form-control" placeholder="Full name" [(ngModel)]="dulieu.password"  [ngModelOptions]="{standalone: true}">
                                 </div>
                                 <br>
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Nhập lại mật khẩu">
+                                    <input type="text" class="form-control" placeholder="Nhập lại mật khẩu"> 
                                 </div>
                                 <br>
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Email">
+                                    <input type="text" class="form-control" placeholder="Email"[(ngModel)]="dulieu.email"  [ngModelOptions]="{standalone: true}">
                                 </div>
                                 <br>
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Nhập lại email">
+                                    <input type="text" class="form-control" placeholder="giới tính"[(ngModel)]="dulieu.gender"  [ngModelOptions]="{standalone: true}">
                                 </div>
                                 <br>
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Số điện thoại">
+                                    <input type="text" class="form-control" placeholder="Sinh nhật"[(ngModel)]="dulieu.birthday"  [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <br>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Học phí"[(ngModel)]="dulieu.schoolfee"  [ngModelOptions]="{standalone: true}">
                                 </div>
                                 <div class="col">
                                         <div class="custom-control custom-checkbox">
@@ -57,7 +60,7 @@
                                 </div>
                             </form>
                             <br>
-                            <a href="#" class="btn btn-primary">Enter</a>
+                            <a class="btn btn-primary" (click)="laydulieu()">Enter</a>
                         </div>
                     </div>
                 </div>
