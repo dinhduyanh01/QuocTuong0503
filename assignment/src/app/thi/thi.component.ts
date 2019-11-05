@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import{ActivatedRoute}from '@angular/router'
 import{DataService} from '../DAL/data.service';
+
 @Component({
   selector: 'app-thi',
   templateUrl: './thi.component.html',
   styleUrls: ['./thi.component.css']
 })
 export class ThiComponent implements OnInit {
+  p;
   quiz : any
-  id : String
+  id :  any
   name : String
   list : any
   product : any
@@ -18,13 +20,26 @@ export class ThiComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(para => {
-      this.id = para.get("Id")
+      this.id = +para.get("Id")
     });
-    this.url = this.id 
+    this.url = 'assets/Quizs/' + this.id + '.json'
     this.datta.getQuiz(this.url).subscribe((dulieu) =>
     {
       this.quiz = dulieu
     })
   }
+  nextpage(){
+    if(this.quiz.length/ 4 > this.p )
+    {
+       return this.p ++;
+    }
+}
+backpage()
+{
+    if(this.p >0)
+    {
+      return this.p --;
+    }
+}
 
 }

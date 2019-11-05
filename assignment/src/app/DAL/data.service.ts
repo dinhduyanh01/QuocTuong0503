@@ -9,9 +9,9 @@ export class DataService {
   getdulieu(){
     return this.http.get("../assets/Students.json")
   }
-  getQuiz(url:String)
+  getQuiz(url)
   {
-    return this.http.get('../assets/Quizs/' + url + '.json');
+    return this.http.get(url);
   }
   getsubject()
   {
