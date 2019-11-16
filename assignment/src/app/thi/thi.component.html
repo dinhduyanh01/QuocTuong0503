@@ -92,41 +92,41 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-12 col-lg-12" >
+            <div class="col-12 col-md-12 col-lg-12" *ngFor="let item of quiz | paginate: { itemsPerPage: 1, currentPage: p }" >
                 <div class="card text-center">
                     <div class="card-header">
-                 
+                        <h1>Câu: {{item.Text}}</h1>
                     </div>
                     <div class="card-body">
                         <div class="form">
                         <form>
-                            <input name="gioitinh" type="radio"  />
+                            <input name="gioitinh" type="radio"  /> {{item.Answers[0].Text}}
                             <br>
-                            <input name="gioitinh" type="radio"  />
+                            <input name="gioitinh" type="radio"  /> {{item.Answers[1].Text}}
                             <br>
-                            <input name="gioitinh" type="radio"  />
+                            <input name="gioitinh" type="radio"  /> {{item.Answers[2].Text}}
                             <br>
-                            <input name="gioitinh" type="radio"  />
+                            <input name="gioitinh" type="radio"  /> {{item.Answers[3].Text}}
                             <br>
                          </form>
                         </div>
                         
                     </div>
                     <div class="card-footer text-muted">
-                      Mark :
+                      Mark : {{item.Marks}}
                     </div>
                     
                   </div>
                   <DIV class="row">
-                        <div class="col-12 col-md-12 col-lg-12">
-                            <div class="nutchuyentrang">
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-secondary" (click)="backpage()">Left</button>
-                                    <button type="button" class="btn btn-secondary" (click)="nextpage()">Right</button>
-                                </div>
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="nutchuyentrang">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-secondary" (click)="backpage()">Left</button>
+                                <button type="button" class="btn btn-secondary" (click)="nextpage()">Right</button>
                             </div>
                         </div>
-                    </DIV>
+                    </div>
+                </DIV>
             </div>
         </div>
         <div class="row">
