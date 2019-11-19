@@ -1,14 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { DataService } from '../DAL/data.service';
-import{NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 @Component({
   selector: 'app-thi',
   templateUrl: './thi.component.html',
   styleUrls: ['./thi.component.css']
 })
 export class ThiComponent implements OnInit {
-  p=1;
+  idd ; null
+  tong = 0
+  kq = {
+    value: null,
+  }
+  stt = 1;
+  p = 1;
   quiz: any
   id: any
   name: String
@@ -16,6 +22,9 @@ export class ThiComponent implements OnInit {
   product: any
   monthi: any
   url: String
+  result:{
+    mark:0
+  }
   constructor(private datta: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -38,5 +47,33 @@ export class ThiComponent implements OnInit {
       return this.p--;
     }
   }
+  submit(value) {
+    for (var i = 0; i < this.quiz.length; i++) {
+      if (this.quiz.length > this.p) {
+        if ( value == this.quiz[i].AnswerId )  { 
+       this.tong = this.tong+1
+       return this.p++
+        }
+        else {
+          
+         this.tong
+        return  this.p++
+        }
+      }
+      else
+      {
+        alert("điểm của bạn là" + this.tong)
+        break
+      }
+    }
+    
+  }
 
+
+
+  onchoose(answerid){
+    console.log(answerid);
+    
+
+  }
 }
