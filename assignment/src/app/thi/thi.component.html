@@ -23,6 +23,7 @@
 </head>
 
 <body>
+
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-8">
@@ -91,61 +92,58 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-12 col-lg-12" *ngFor="let item of quiz | paginate: { itemsPerPage: 1, currentPage: p }" >
-                <div class="card text-center">
-                    <div class="card-header">
-                        <h1>Câu: {{item.Text}}</h1>
-                    </div>
-                    <div class="card-body">
-                            <div *ngFor="let question of item.Answers">
-                                    <div class="row" style="margin-left: 10px;">
-                                        <div class="form-check form-check-inline formradio">
-                                            <label class="checkradio">{{question.Text}}
-                                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                                    [value]="question.Id" [(ngModel)]="kq.value"
-                                                    [ngModelOptions]="{standalone: true}">
-                                                    
-                                                <span class="checkmark"></span>
-                                            </label>
+        <div class="bailam">
+            <p>
+                <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample" (click)="thoigian()">
+                    Bắt đầu
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <div class="row">
+
+                        <div class="col-8 col-md-8 col-lg-8"
+                            *ngFor="let item of quiz | paginate: { itemsPerPage: 1, currentPage: p }">
+                            <div class="card text-center">
+                                <div class="card-header">
+                                    <h1>Câu: {{item.Text}}</h1>
+                                </div>
+                                <div class="card-body">
+                                    <div *ngFor="let question of item.Answers">
+                                        <div class="row" style="margin-left: 10px;">
+                                            <div class="form-check form-check-inline formradio">
+                                                <label class="checkradio">{{question.Text}}
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                                        [value]="question.Id" [(ngModel)]="kq.value"
+                                                        [ngModelOptions]="{standalone: true}">
+
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                        <!-- <div class="row" style="margin-left: 10px;">
-                            <div class="form-check form-check-inline formradio">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="item.Answers[0].Id"  [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}">
-                                <label class="form-check-label">{{question.Text}}</label>
+
+                                <div class="card-footer text-muted">
+                                    Mark : {{tong}}
+                                </div>
+                                <button class="btn btn-danger" (click)="submit(item.AnswerId)">submit</button>
                             </div>
                         </div>
-            
-                        <div class="row" style="margin-left: 10px;">
-                            <div class="form-check form-check-inline formradio">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="item.Answers[1].Id"  [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}">
-                                <label class="form-check-label">{{item.Answers[1].Text}}</label>
+                        <div class="phai">
+                            <div class="col-4 col-md-4 col-lg-4">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tên :</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">Thời gian  <p>{{m}} : {{s}}</p>
+                                        </h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row" style="margin-left: 10px;">
-                            <div class="form-check form-check-inline formradio">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="item.Answers[2].Id"   [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}">
-                                <label class="form-check-label">{{item.Answers[2].Text}}</label>
-                            </div>
-                        </div>
-                        <div class="row" style="margin-left: 10px;">
-                            <div class="form-check form-check-inline formradio">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="item.Answers[3].Id" [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}"  >
-                                <label class="form-check-label">{{item.Answers[3].Text}}</label>
-                            </div>
-                        </div> -->
                     </div>
-                    <div class="card-footer text-muted">
-                      Mark : {{tong}}
-                    </div>
-                    <button class="btn btn-danger" (click)="submit(item.AnswerId)" >submit</button>
-                  </div>
+                </div>
             </div>
         </div>
         <div class="row">

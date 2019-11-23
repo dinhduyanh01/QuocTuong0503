@@ -8,7 +8,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
   styleUrls: ['./thi.component.css']
 })
 export class ThiComponent implements OnInit {
+  m =10;
+  s=0;
   tong = 0;
+  timeout
   kq = {
     value: 0,
   }
@@ -63,5 +66,23 @@ export class ThiComponent implements OnInit {
       }
     }
   }
+  thoigian()
+  {
+    if(this.s === -1)
+    {
+      this.s =59;
+      this.m = this.m-1
+    }
+    if(this.m == -1)
+    {
+      clearTimeout(this.timeout)
+      alert(" điểm của bạn là " + this.tong)
+    }
+    this.timeout = setTimeout(() => {
+      this.s --;
+      this.thoigian();
+    }, 1000);
+  }
+  
 
 }
