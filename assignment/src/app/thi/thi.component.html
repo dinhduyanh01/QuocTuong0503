@@ -98,41 +98,53 @@
                         <h1>Câu: {{item.Text}}</h1>
                     </div>
                     <div class="card-body">
-                        <div class="row" style="margin-left: 10px;">
+                            <div *ngFor="let question of item.Answers">
+                                    <div class="row" style="margin-left: 10px;">
+                                        <div class="form-check form-check-inline formradio">
+                                            <label class="checkradio">{{question.Text}}
+                                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                                    [value]="question.Id" [(ngModel)]="kq.value"
+                                                    [ngModelOptions]="{standalone: true}">
+                                                    
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                        <!-- <div class="row" style="margin-left: 10px;">
                             <div class="form-check form-check-inline formradio">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    [value]="item.Answers[0].Id" (click)="onchoose(item.Answers[0].Id)" [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}">
-                                <label class="form-check-label">{{item.Answers[0].Text}}</label>
+                                    value="item.Answers[0].Id"  [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}">
+                                <label class="form-check-label">{{question.Text}}</label>
                             </div>
                         </div>
             
                         <div class="row" style="margin-left: 10px;">
                             <div class="form-check form-check-inline formradio">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    [value]="item.Answers[1].Id"  (click)="onchoose(item.Answers[1].Id)" [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}">
+                                    value="item.Answers[1].Id"  [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}">
                                 <label class="form-check-label">{{item.Answers[1].Text}}</label>
                             </div>
                         </div>
                         <div class="row" style="margin-left: 10px;">
                             <div class="form-check form-check-inline formradio">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    [value]="item.Answers[2].Id"  (click)="onchoose(item.Answers[2].Id)"  [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}">
+                                    value="item.Answers[2].Id"   [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}">
                                 <label class="form-check-label">{{item.Answers[2].Text}}</label>
                             </div>
                         </div>
                         <div class="row" style="margin-left: 10px;">
                             <div class="form-check form-check-inline formradio">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    [value]="item.Answers[3].Id" [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}"  (click)="onchoose(item.Answers[2].Id)">
+                                    value="item.Answers[3].Id" [(ngModel)]="kq.value" [ngModelOptions]="{standalone: true}"  >
                                 <label class="form-check-label">{{item.Answers[3].Text}}</label>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="card-footer text-muted">
                       Mark : {{tong}}
                     </div>
-                    <a  >trả lời</a>
-                    <button class="btn btn-danger" (click)="submit()" >submit</button>
+                    <button class="btn btn-danger" (click)="submit(item.AnswerId)" >submit</button>
                   </div>
             </div>
         </div>

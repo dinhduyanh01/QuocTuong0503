@@ -8,10 +8,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
   styleUrls: ['./thi.component.css']
 })
 export class ThiComponent implements OnInit {
-  idd ; null
-  tong = 0
+  tong = 0;
   kq = {
-    value: null,
+    value: 0,
   }
   stt = 1;
   p = 1;
@@ -22,9 +21,6 @@ export class ThiComponent implements OnInit {
   product: any
   monthi: any
   url: String
-  result:{
-    mark:0
-  }
   constructor(private datta: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -47,33 +43,25 @@ export class ThiComponent implements OnInit {
       return this.p--;
     }
   }
-  submit(value) {
+  submit(giatri) {
     for (var i = 0; i < this.quiz.length; i++) {
       if (this.quiz.length > this.p) {
-        if ( value == this.quiz[i].AnswerId )  { 
-       this.tong = this.tong+1
-       return this.p++
+        if (this.kq.value == giatri) {
+
+          this.tong++
+          this.p++
+          return this.tong
         }
         else {
-          
-         this.tong
-        return  this.p++
+
+          this.p++
+          return this.tong
         }
       }
-      else
-      {
-        alert("điểm của bạn là" + this.tong)
-        break
+      else {
+        alert(" điểm của bạn là " + this.tong)
       }
     }
-    
   }
 
-
-
-  onchoose(answerid){
-    console.log(answerid);
-    
-
-  }
 }
