@@ -10,25 +10,29 @@ import { DataService } from '../DAL/data.service';
   styleUrls: ['./dangnhap.component.css']
 })
 export class DangnhapComponent implements OnInit {
+  giatri
   dangnhap1;
     taikhoan: null;
     matkhau: null;
-  dem
+  item
   
   constructor(private dataa: DataService) { }
 
   ngOnInit() {
+   
+    this.item = this.dataa.mang
     this.dataa.getdulieu().subscribe(dulieu => {
       this.dangnhap1 =dulieu
       
     });
+    
   }
   
 
   login() {
-   for(var i=0 ; i < this.dangnhap1.length; i++)
+   for(var i=0 ; i < this.item.length; i++)
    {
-     if(this.taikhoan === this.dangnhap1[i].username && this.matkhau === this.dangnhap1[i].password)
+     if(this.taikhoan === this.item[i].username && this.matkhau === this.item[i].password)
      {
        alert("đăng nhập thành công")
        break;
@@ -37,7 +41,7 @@ export class DangnhapComponent implements OnInit {
      else
      {
       
-      if(i === this.dangnhap1.length-1)
+      if(i === this.item.length-1)
       {
         alert("nhập sai rồi")
 

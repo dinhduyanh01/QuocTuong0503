@@ -128,15 +128,15 @@
                                 <div class="card-footer text-muted">
                                     Mark : {{tong}}
                                 </div>
-                                <button class="btn btn-danger" (click)="submit(item.AnswerId)">submit</button>
+                                <button class="btn btn-danger" (click)="submit(item.AnswerId)" *ngIf="tatmo">submit</button>
                             </div>
                         </div>
                         <div class="phai">
                             <div class="col-4 col-md-4 col-lg-4">
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
-                                        <h5 class="card-title">Tên :</h5>
                                         <h6 class="card-subtitle mb-2 text-muted">Thời gian  <p>{{m}} : {{s}}</p>
+                                            <h5>Mark : {{tong}}</h5>
                                         </h6>
                                     </div>
                                 </div>

@@ -8,8 +8,13 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./dangki.component.css']
 })
 export class DangkiComponent implements OnInit {
+  item
+  giatri
+  Mark = 0;
   Students
-  constructor(private dataa: DataService, private route: ActivatedRoute) { }
+  constructor(private dataa: DataService, private route: ActivatedRoute) { 
+
+  }
   dulieu = {
     "username": null,
     "password": null,
@@ -22,10 +27,14 @@ export class DangkiComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.item = this.dataa.mang
     this.dataa.getsubject().subscribe(dulieu1 => {
       this.Students = dulieu1
     })
+    
+    
   }
+
   laydulieu() {
     for (var i = 0; i < this.Students.length; i++) {
       if (this.dulieu.username === this.Students.username) {
@@ -33,7 +42,7 @@ export class DangkiComponent implements OnInit {
         break
       }
       else {
-        this.Students.push(Object.assign(this.dulieu))
+        this.dataa.additem(Object.assign(this.dulieu))
         this.dulieu = {
           "username": null,
           "password": null,
@@ -44,6 +53,7 @@ export class DangkiComponent implements OnInit {
           "schoolfee": null,
           "marks": null
         }
+        this.giatri=this.item
         alert("thêm vào thành công")
         break;
       }
