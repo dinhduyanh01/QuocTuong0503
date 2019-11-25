@@ -53,8 +53,8 @@ import { FormsModule } from '@angular/forms';
       { path: 'dangnhap', component: DangnhapComponent },
       { path: 'dangki', component: DangkiComponent },
       { path: 'doimatkhau', component: DoimatkhauComponent },
-      { path: 'DMMH', component: DanhmucmonhocComponent },
-      { path: 'DMMH/:Id', component: ThiComponent },
+      { path: 'DMMH/:user', component: DanhmucmonhocComponent },
+      { path: 'DMMH/:user/:Id ', component: ThiComponent },
 
     ])
   ],

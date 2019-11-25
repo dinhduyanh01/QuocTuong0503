@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
-import{ActivatedRoute}from '@angular/router'
+import{ActivatedRoute ,Router}from '@angular/router'
 import { DataService } from '../DAL/data.service';
 
 
@@ -16,7 +16,7 @@ export class DangnhapComponent implements OnInit {
     matkhau: null;
   item
   
-  constructor(private dataa: DataService) { }
+  constructor(private dataa: DataService ,private routerr : Router) { }
 
   ngOnInit() {
    
@@ -35,6 +35,8 @@ export class DangnhapComponent implements OnInit {
      if(this.taikhoan === this.item[i].username && this.matkhau === this.item[i].password)
      {
        alert("đăng nhập thành công")
+      
+       this.routerr.navigate(['/DMMH',this.taikhoan]) 
        break;
       
      }

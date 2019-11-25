@@ -41,7 +41,7 @@ export class DataService {
   getdulieu(){
     return this.http.get("../assets/Students.json")
   }
-  getQuiz(url)
+  getQuiz (url)
   {
     return this.http.get(url);
   }
@@ -49,10 +49,7 @@ export class DataService {
   {
     return this.http.get('../assets/Subjects.json')
   }
-  getitem()
-  {
-    return this.mang
-  }
+
   additem(giatri)
   {
     this.mang.push(giatri)

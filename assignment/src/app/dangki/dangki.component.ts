@@ -53,7 +53,7 @@ export class DangkiComponent implements OnInit {
           "schoolfee": null,
           "marks": null
         }
-        this.giatri=this.item
+        
         alert("thêm vào thành công")
         break;
       }
