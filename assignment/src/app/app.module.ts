@@ -18,7 +18,9 @@ import { StudentComponent } from './student/student.component';
 import{HttpClientModule}from '@angular/common/http'
 import { from } from 'rxjs';
 import { FormsModule } from '@angular/forms';
-
+import{AngularFireModule} from '@angular/fire';
+import{AngularFireDatabaseModule}from'@angular/fire/database'
+import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,9 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     NgxPaginationModule,
+    AngularFireDatabaseModule,
     HttpClientModule,
     BrowserModule,
     RouterModule.forRoot([
@@ -54,7 +58,7 @@ import { FormsModule } from '@angular/forms';
       { path: 'dangki', component: DangkiComponent },
       { path: 'doimatkhau', component: DoimatkhauComponent },
       { path: 'DMMH/:user', component: DanhmucmonhocComponent },
-      { path: 'DMMH/:user/:Id ', component: ThiComponent },
+      { path: 'DMMH/:user/:Id', component: ThiComponent },
 
     ])
   ],

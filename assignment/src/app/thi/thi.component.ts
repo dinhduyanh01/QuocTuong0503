@@ -10,38 +10,37 @@ import { HttpClient } from '@angular/common/http'
 })
 export class ThiComponent implements OnInit {
   
-  ten
-  giatri
-  tatmo = true
+  ten;
+  giatri;
+  tatmo = true;
   m = 10;
   s = 0;
   tong = 0;
-  timeout
+  timeout;
   kq = {
     value: 0,
   }
   stt = 1;
   p = 1;
-  quiz: any
-  id
-  name: String
-  list: any
-  product: any
-  monthi: any
-  url: String
-  subjectName
+  quiz: any;
+  id : any;
+  name: String;
+  list: any;
+  product: any;
+  monthi: any;
+  url: any;
   constructor(private datta: DataService, private router: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit() {
-    this.router.paramMap.subscribe(para => {
-      this.id == para.get("Id")
-      this.name = para.get("user")
-      this.url = "../assets/Quizs/" + this.id + ".json"
-    })
-    this.datta.getQuiz(this.url).subscribe((dulieu) => {
-      this.quiz = dulieu
-      console.log(this.quiz);
+    this.router.paramMap.subscribe(p =>{
+      this.name = p.get('user');
+      this.id = p.get('Id');
+      console.log(this.router);
+      this.url = "../assets/Quizs/" + this.id + ".json";
 
+    })
+    this.datta.getQuizs(this.url).subscribe((dulieu) => {
+      this.quiz = dulieu
     })
     // this.router.paramMap.subscribe(params =>{
     //   const id= params.get('Id')
@@ -74,6 +73,7 @@ export class ThiComponent implements OnInit {
       }
       else {
         alert(" điểm của bạn là " + this.tong)
+        break
       }
     }
   }
@@ -84,8 +84,6 @@ export class ThiComponent implements OnInit {
     }
     if (this.m == 0) {
       this.tatmo = !this.tatmo
-
-      alert(" điểm của bạn là " + this.tong)
       clearTimeout(this.timeout)
     }
     this.timeout = setTimeout(() => {
